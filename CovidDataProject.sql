@@ -202,20 +202,7 @@ order by PercentPopulationInfected DESC
 
 
 
-
-
-
-
-
-
-
-
-
--- Queries I originally had, but excluded some because it created too long of video
--- Here only in case you want to check them out
-
-
--- 1.
+-- 
 
 Select dea.continent, dea.location, dea.date, dea.population
 , MAX(vac.total_vaccinations) as RollingPeopleVaccinated
@@ -231,7 +218,7 @@ order by 1,2,3
 
 
 
--- 2.
+-- 
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From Project_CovidData..CovidDeaths
 --Where location like '%states%'
@@ -252,7 +239,7 @@ order by 1,2
 --order by 1,2
 
 
--- 3.
+-- 
 
 -- We take these out as they are not inluded in the above queries and want to stay consistent
 -- European Union is part of Europe
@@ -267,7 +254,7 @@ order by TotalDeathCount desc
 
 
 
--- 4.
+-- 
 
 Select Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From Project_CovidData..CovidDeaths
